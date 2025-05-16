@@ -1,6 +1,6 @@
 import unittest
 
-from Aluno import Aluno
+from Aluno.Aluno import Aluno
 
 class AlunoTest(unittest.TestCase):
     aluno = Aluno("Welson", "Rodrigues", 50)

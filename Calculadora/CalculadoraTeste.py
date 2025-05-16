@@ -1,5 +1,5 @@
 import unittest
-from Calculadora import Calculadora
+from Calculadora.Calculadora import Calculadora
 
 class CalculadoraTeste(unittest.TestCase):
     def testeSoma(self):
