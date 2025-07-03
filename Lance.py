@@ -15,7 +15,7 @@ class Leilao:
             return True
         return False
 
-    def obter_vencedor(self) -> Lance | None:
+    def obter_vencedor(self):
         if not self.lances:
             return None
-        return max(self.lances, key=lambda l: l.valor)
+        return max(self.lances, key=lambda l: l.valor) #Retorna o lance com o maior valor dentro da lista de lance
