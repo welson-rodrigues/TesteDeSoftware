@@ -62,6 +62,12 @@ def test_fluxo_integra_compras():
     assert compras[0]["total"] == 338.94
 
     # 4. Tentar compra com produto inválido
+    try:
+        realizar_compra(1, [7])  # Usuário 1 quer comprar produto 7 que não existe
+        assert False
+    except ValueError as invalido:
+        print(invalido)
+        assert str(invalido) == "Produto 7 não encontrado."
 
 
     # 5. Verificar compras do usuário 1
