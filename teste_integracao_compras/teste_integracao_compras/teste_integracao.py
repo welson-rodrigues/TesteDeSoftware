@@ -31,7 +31,35 @@ def test_fluxo_integra_compras():
     assert produtos_db[6] == {"nome": "Dreamgirl Peruca feminina bob", "preco": 198.99}
 
     # 3. Realizar compra válida
+    #Elizeu
+    total = realizar_compra(1, [4, 5]) # Ele comprou a boneca e o papel higiênico
+    assert total == 339.95 # seria o 139.95 + 198.99 das compras
 
+    #Moroni
+    total = realizar_compra(2, [6, 4]) # Ele comprou a Peruca e boneca
+    assert total == 398.99 # seria o 198.99 + 200.00 das compras
+
+    #Keylly
+    total = realizar_compra(3, [5, 6]) # Ele comprou a boneca e o papel higiênico
+    assert total == 338.94 # seria o 139.95 + 198.99 das compras
+
+    # Verificar compra no banco
+    compras = listar_compras(1)
+    assert len(compras) == 1
+    assert compras[0]["produtos"] == [4, 5]
+    assert compras[0]["total"] == 339.95
+
+    # Moroni
+    compras = listar_compras(2)
+    assert len(compras) == 1
+    assert compras[0]["produtos"] == [6, 4]
+    assert compras[0]["total"] == 398.99
+
+    # Keylly
+    compras = listar_compras(3)
+    assert len(compras) == 1
+    assert compras[0]["produtos"] == [5, 6]
+    assert compras[0]["total"] == 338.94
 
     # 4. Tentar compra com produto inválido
 
