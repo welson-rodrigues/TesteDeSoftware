@@ -1,4 +1,3 @@
-
 from usuarios import cadastrar_usuario, usuarios_db
 from produtos import cadastrar_produto, produtos_db
 from compras import realizar_compra, listar_compras, compras_db

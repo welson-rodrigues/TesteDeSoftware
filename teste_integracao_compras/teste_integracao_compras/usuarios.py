@@ -1,4 +1,3 @@
-
 usuarios_db = {}
 
 def cadastrar_usuario(id, nome):

@@ -1,4 +1,3 @@
-
 from usuarios import consultar_usuario
 from produtos import consultar_produto
 

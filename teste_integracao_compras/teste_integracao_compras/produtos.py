@@ -1,4 +1,3 @@
-
 produtos_db = {}
 
 def cadastrar_produto(codigo, nome, preco):
