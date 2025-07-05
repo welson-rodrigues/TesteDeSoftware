@@ -40,10 +40,11 @@ def test_fluxo_integra_compras():
     assert total == 398.99 # seria o 198.99 + 200.00 das compras
 
     #Keylly
-    total = realizar_compra(3, [5, 6]) # Ele comprou a boneca e o papel higiênico
+    total = realizar_compra(3, [5, 6]) # Ele comprou a Peruca e o papel higiênico
     assert total == 338.94 # seria o 139.95 + 198.99 das compras
 
     # Verificar compra no banco
+    # Elizeu
     compras = listar_compras(1)
     assert len(compras) == 1
     assert compras[0]["produtos"] == [4, 5]
@@ -71,9 +72,16 @@ def test_fluxo_integra_compras():
 
 
     # 5. Verificar compras do usuário 1
-
+    compras = listar_compras(1)
+    assert len(compras) == 1
+    assert compras[0]["produtos"] == [4, 5]
+    assert compras[0]["total"] == 339.95
+    print("Compras do usuário 1:", compras[0]["produtos"])
 
     # 6. Verificar um usuário que não tem compras
+    cadastrar_usuario(4, "Danilo")
+    compras_usuario4 = listar_compras(4)
+    assert compras_usuario4 == []
 
 # Executa o teste
 if __name__ == "__main__":
